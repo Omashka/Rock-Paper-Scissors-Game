@@ -1,0 +1,110 @@
+#include <iostream>
+using namespace std;
+
+
+const int rock =1;
+const int paper= 2;
+const int sci= 3;
+
+//get user choice
+int getUchoice() 
+{int choice;
+  cout << "\n" <<"Welcome To The Computer Generated RPS Game!" << endl ;
+  cout<< "\n" <<"Enter Your Choice : " << endl;
+  cout << "1. Rock" << endl; 
+  cout << "2. Paper" << endl;
+  cout << "3. Scissors" << endl;
+  cout << "4. Quit Appplication" << endl;
+  cin >> choice; 
+  return choice; }
+
+//random comp choice
+ int getcompChoice() 
+{int compChoice= rand()%3+1;  
+ return compChoice ; 
+ 
+  }
+
+void displaywinner (int Uchoice, int compChoice) 
+{
+  
+ //if else statements
+if (Uchoice==rock)
+if(compChoice==paper)
+cout << "B00H00. The Computer Has Won!" << endl;   
+
+  
+else if (compChoice==sci) 
+cout << "The User Has Won!" << endl; 
+else 
+  cout << "It's A Tie!" << endl; 
+
+else if(Uchoice==paper)
+if (compChoice==rock)
+cout << "The User Has Won!" << endl ;
+else if (compChoice==paper) 
+cout << "It Is A Tie!" << endl; 
+else 
+  cout << "BOOHOO. The Computer Has Won!" << endl;
+  
+else if(compChoice==rock) 
+cout << "BOOHOO. The Computer Has Won!" << endl; 
+  
+else if(compChoice== paper)
+cout << "The User Has Won!" << endl;
+else
+  cout <<"It Is A Tie!" << endl;
+
+}
+
+//user choice displayed
+void displayUchoice (int Uchoice) 
+{if (Uchoice==1) { cout << "\n "<<"You Have Selected: Rock!" << endl; }
+else if(Uchoice==2) { cout << "\n"<<"You Have Selected: Paper!" << endl; }
+else { cout  << "\n" <<"You Have Selected: Scissors!" <<endl; }
+  }
+
+
+
+//starting here 
+int main() {
+while(true){
+int Uchoice = getUchoice();
+int compChoice = getcompChoice() ; 
+
+//break loop If User choice is 4
+if(Uchoice==4)
+  break; 
+
+
+//comp choice displayes
+else {
+  displayUchoice (Uchoice);
+  
+  if (compChoice == rock) { cout << "The Computer Has Selected: Rock" <<endl; }
+
+  else if (compChoice == paper) {cout << "The Computer Has Selected: Paper" << endl; } 
+
+  else { cout << " The Computer Has Selected: Scissors"  << endl; }
+
+  
+//display winner
+  displaywinner(Uchoice, compChoice);
+}
+
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+  }
+  
